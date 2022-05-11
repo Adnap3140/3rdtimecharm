@@ -11,9 +11,9 @@ import {
   getOverrideProps,
   useDataStoreBinding,
 } from "@aws-amplify/ui-react/internal";
-import CardG from "./CardG";
+import CardF from "./CardF";
 import { Collection } from "@aws-amplify/ui-react";
-export default function GamesDisplay(props) {
+export default function Test(props) {
   const { items: itemsProp, overrideItems, overrides, ...rest } = props;
   const itemsDataStore = useDataStoreBinding({
     type: "collection",
@@ -27,14 +27,14 @@ export default function GamesDisplay(props) {
       justifyContent="stretch"
       items={items || []}
       {...rest}
-      {...getOverrideProps(overrides, "GamesDisplay")}
+      {...getOverrideProps(overrides, "Test")}
     >
       {(item, index) => (
-        <CardG
-          game={item}
+        <CardF
+          t={item}
           key={item.id}
           {...(overrideItems && overrideItems({ item, index }))}
-        ></CardG>
+        ></CardF>
       )}
     </Collection>
   );

@@ -6,8 +6,11 @@
 
 import React from "react";
 import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
+import { Game } from "../models";
 import { FlexProps } from "@aws-amplify/ui-react";
 export declare type SetGameProps = React.PropsWithChildren<Partial<FlexProps> & {
+    game?: Game;
+} & {
     overrides?: EscapeHatchProps | undefined | null;
 }>;
 export default function SetGame(props: SetGameProps): React.ReactElement;

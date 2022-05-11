@@ -82,7 +82,7 @@ export default function FormCheckout(props) {
               position="relative"
               padding="0px 0px 0px 0px"
               whiteSpace="pre-wrap"
-              children="Info"
+              children="Post a Game"
               {...getOverrideProps(overrides, "Info")}
             ></Text>
             <TextField
@@ -94,7 +94,7 @@ export default function FormCheckout(props) {
               objectFit="cover"
               position="relative"
               padding="0px 0px 0px 0px"
-              label="Label"
+              label="Title"
               placeholder="Placeholder"
               size="large"
               isDisabled={false}
@@ -111,7 +111,7 @@ export default function FormCheckout(props) {
               objectFit="cover"
               position="relative"
               padding="0px 0px 0px 0px"
-              label="Label"
+              label="Primary Tag"
               placeholder="Placeholder"
               size="large"
               isDisabled={false}
@@ -148,7 +148,7 @@ export default function FormCheckout(props) {
               color="rgba(13,26,38,1)"
               lineHeight="20px"
               textAlign="left"
-              display="flex"
+              display="none"
               direction="column"
               justifyContent="flex-start"
               shrink="0"
@@ -167,7 +167,7 @@ export default function FormCheckout(props) {
               objectFit="cover"
               position="relative"
               padding="0px 0px 0px 0px"
-              label="Label"
+              label=""
               placeholder="Placeholder"
               size="large"
               isDisabled={false}

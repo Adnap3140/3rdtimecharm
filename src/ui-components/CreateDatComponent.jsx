@@ -12,6 +12,7 @@ import {
   useStateMutationAction,
 } from "@aws-amplify/ui-react/internal";
 import { Game } from "../models";
+import { schema } from "../models/schema";
 import {
   Button,
   Divider,
@@ -52,6 +53,7 @@ export default function CreateDatComponent(props) {
       purchaseLink: textFieldThreeZeroSevenSevenTwoEightNineZeroValue,
     },
     model: Game,
+    schema: schema,
   });
   return (
     <Flex

@@ -6,7 +6,13 @@
 
 /* eslint-disable */
 import React from "react";
-import { getOverrideProps } from "@aws-amplify/ui-react/internal";
+import {
+  getOverrideProps,
+  useDataStoreDeleteAction,
+  useNavigateAction,
+} from "@aws-amplify/ui-react/internal";
+import { Game } from "../models";
+import { schema } from "../models/schema";
 import {
   Badge,
   Divider,
@@ -18,7 +24,20 @@ import {
   View,
 } from "@aws-amplify/ui-react";
 export default function CardG(props) {
-  const { overrides, ...rest } = props;
+  const { game, overrides, ...rest } = props;
+  const informationaboutthisproductOnClick = useNavigateAction({
+    type: "url",
+    url: `${"game/"}${game?.id}`,
+  });
+  const reviewsOnClick = useDataStoreDeleteAction({
+    id: game?.id,
+    model: Game,
+    schema: schema,
+  });
+  const dollarNineNineSlashNightOnClick = useNavigateAction({
+    type: "url",
+    url: game?.purchaseLink,
+  });
   return (
     <Flex
       gap="0"
@@ -36,6 +55,7 @@ export default function CardG(props) {
         shrink="0"
         position="relative"
         padding="0px 0px 0px 0px"
+        src={game?.imageURL}
         {...getOverrideProps(overrides, "image")}
       ></Image>
       <Flex
@@ -87,7 +107,10 @@ export default function CardG(props) {
               position="relative"
               padding="0px 0px 0px 0px"
               whiteSpace="pre-wrap"
-              children="Information about this product"
+              children="Edit Post"
+              onClick={() => {
+                informationaboutthisproductOnClick();
+              }}
               {...getOverrideProps(overrides, "Information about this product")}
             ></Text>
             <View
@@ -140,7 +163,7 @@ export default function CardG(props) {
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
-            children="Classic Long Sleeve T-Shirt"
+            children={game?.name}
             {...getOverrideProps(overrides, "Classic Long Sleeve T-Shirt")}
           ></Text>
         </Flex>
@@ -181,7 +204,7 @@ export default function CardG(props) {
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
-            children="Information about this product."
+            children={game?.description}
             {...getOverrideProps(
               overrides,
               "Information about this product.29766836"
@@ -194,7 +217,7 @@ export default function CardG(props) {
             color="rgba(92,102,112,1)"
             lineHeight="24px"
             textAlign="left"
-            display="flex"
+            display="none"
             direction="column"
             justifyContent="flex-start"
             letterSpacing="0.01px"
@@ -266,6 +289,7 @@ export default function CardG(props) {
               position="relative"
               padding="0px 0px 0px 0px"
               size="large"
+              rating={game?.rating}
               {...getOverrideProps(overrides, "Rating29766841")}
             ></Rating>
             <Text
@@ -283,7 +307,10 @@ export default function CardG(props) {
               position="relative"
               padding="0px 0px 0px 0px"
               whiteSpace="pre-wrap"
-              children="Reviews"
+              children="delete"
+              onClick={() => {
+                reviewsOnClick();
+              }}
               {...getOverrideProps(overrides, "Reviews")}
             ></Text>
           </Flex>
@@ -303,7 +330,10 @@ export default function CardG(props) {
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
-            children="$99/Night"
+            children="Purchase Link"
+            onClick={() => {
+              dollarNineNineSlashNightOnClick();
+            }}
             {...getOverrideProps(overrides, "$99/Night")}
           ></Text>
         </Flex>

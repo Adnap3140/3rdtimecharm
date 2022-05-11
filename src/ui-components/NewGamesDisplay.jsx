@@ -6,20 +6,11 @@
 
 /* eslint-disable */
 import React from "react";
-import { Game } from "../models";
-import {
-  getOverrideProps,
-  useDataStoreBinding,
-} from "@aws-amplify/ui-react/internal";
 import CardG from "./CardG";
+import { getOverrideProps } from "@aws-amplify/ui-react/internal";
 import { Collection } from "@aws-amplify/ui-react";
-export default function GamesDisplay(props) {
-  const { items: itemsProp, overrideItems, overrides, ...rest } = props;
-  const itemsDataStore = useDataStoreBinding({
-    type: "collection",
-    model: Game,
-  }).items;
-  const items = itemsProp !== undefined ? itemsProp : itemsDataStore;
+export default function NewGamesDisplay(props) {
+  const { items, overrideItems, overrides, ...rest } = props;
   return (
     <Collection
       type="list"
@@ -27,11 +18,10 @@ export default function GamesDisplay(props) {
       justifyContent="stretch"
       items={items || []}
       {...rest}
-      {...getOverrideProps(overrides, "GamesDisplay")}
+      {...getOverrideProps(overrides, "NewGamesDisplay")}
     >
       {(item, index) => (
         <CardG
-          game={item}
           key={item.id}
           {...(overrideItems && overrideItems({ item, index }))}
         ></CardG>

@@ -12,6 +12,7 @@ import {
   useStateMutationAction,
 } from "@aws-amplify/ui-react/internal";
 import { Game } from "../models";
+import { schema } from "../models/schema";
 import {
   Button,
   Divider,
@@ -53,6 +54,7 @@ export default function SetGame(props) {
     },
     id: game?.id,
     model: Game,
+    schema: schema,
   });
   return (
     <Flex

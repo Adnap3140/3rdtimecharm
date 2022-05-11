@@ -19,7 +19,7 @@ import {
 } from "@aws-amplify/ui-react";
 import MyIcon from "./MyIcon";
 export default function CardF(props) {
-  const { overrides, ...rest } = props;
+  const { t, overrides, ...rest } = props;
   return (
     <Flex
       gap="0"

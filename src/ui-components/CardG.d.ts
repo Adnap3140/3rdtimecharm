@@ -6,8 +6,11 @@
 
 import React from "react";
 import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
+import { Game } from "../models";
 import { FlexProps } from "@aws-amplify/ui-react";
 export declare type CardGProps = React.PropsWithChildren<Partial<FlexProps> & {
+    game?: Game;
+} & {
     overrides?: EscapeHatchProps | undefined | null;
 }>;
 export default function CardG(props: CardGProps): React.ReactElement;
