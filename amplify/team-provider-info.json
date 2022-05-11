@@ -1,0 +1,15 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-3rdtimecharm-staging-181233-authRole",
+      "UnauthRoleArn": "arn:aws:iam::701346398968:role/amplify-3rdtimecharm-staging-181233-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::701346398968:role/amplify-3rdtimecharm-staging-181233-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-3rdtimecharm-staging-181233-deployment",
+      "UnauthRoleName": "amplify-3rdtimecharm-staging-181233-unauthRole",
+      "StackName": "amplify-3rdtimecharm-staging-181233",
+      "StackId": "arn:aws:cloudformation:us-east-1:701346398968:stack/amplify-3rdtimecharm-staging-181233/edd90190-d155-11ec-af6d-121f6ace6d31",
+      "AmplifyAppId": "d18khgz0bz4rcu"
+    }
+  }
+}
