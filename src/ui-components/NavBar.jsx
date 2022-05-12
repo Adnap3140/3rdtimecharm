@@ -8,6 +8,7 @@
 import React from "react";
 import {
   getOverrideProps,
+  useAuthSignOutAction,
   useNavigateAction,
 } from "@aws-amplify/ui-react/internal";
 import {
@@ -22,6 +23,7 @@ export default function NavBar(props) {
   const { idk, overrides, ...rest } = props;
   const browseOnClick = useNavigateAction({ type: "url", url: "/" });
   const postOnClick = useNavigateAction({ type: "url", url: "newgame" });
+  const imageOnClick = useAuthSignOutAction({ global: false });
   return (
     <Flex
       gap="20px"
@@ -237,6 +239,9 @@ export default function NavBar(props) {
           position="relative"
           borderRadius="160px"
           padding="0px 0px 0px 0px"
+          onClick={() => {
+            imageOnClick();
+          }}
           {...getOverrideProps(overrides, "image")}
         ></Image>
       </Flex>
